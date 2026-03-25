@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darshan Gowda T S — Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fff;
+            color: #1a1a1a;
+            font-size: 11.5px;
+            line-height: 1.4;
+        }
+        
+        .page {
+            width: 794px;
+            min-height: 1123px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px 38px 38px 38px;
+        }
+        /* ── HEADER ── */
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2px;
+        }
+        
+        .hname h1 {
+            font-size: 27px;
+            font-weight: 900;
+            color: #111;
+            letter-spacing: -0.3px;
+            line-height: 1.18;
+        }
+        
+        .hrole {
+            font-size: 13px;
+            font-weight: 700;
+            color: #17a36a;
+            margin-top: 4px;
+            letter-spacing: 0.1px;
+        }
+        
+        .avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: #17a36a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 21px;
+            font-weight: 800;
+            color: #fff;
+            flex-shrink: 0;
+            margin-top: 3px;
+            font-family: Arial, sans-serif;
+        }
+        /* ── CONTACT BAR — NO EMOJIS (fixes ATS Parse Rate issue) ── */
+        
+        .cbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px 20px;
+            font-size: 10.5px;
+            color: #333;
+            border-top: 1px solid #ddd;
+            border-bottom: 1.5px solid #ccc;
+            padding: 7px 0 8px 0;
+            margin: 8px 0 12px 0;
+        }
+        
+        .cbar span {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .cbar svg {
+            width: 10px;
+            height: 10px;
+            flex-shrink: 0;
+            color: #555;
+        }
+        
+        .cbar a {
+            color: #333;
+            text-decoration: none;
+        }
+        /* ── SECTION HEADING ── */
+        
+        .sh {
+            font-size: 10px;
+            font-weight: 900;
+            color: #111;
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            border-bottom: 2.5px solid #17a36a;
+            padding-bottom: 3px;
+            margin-bottom: 9px;
+            margin-top: 15px;
+        }
+        
+        .sh:first-child {
+            margin-top: 0;
+        }
+        /* ── SUMMARY ── */
+        
+        .summary {
+            font-size: 11px;
+            color: #222;
+            line-height: 1.78;
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+        /* ── GRID: left + right ── */
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 305px 1fr;
+            gap: 0 26px;
+        }
+        /* ── EDUCATION ── */
+        
+        .edu {
+            margin-bottom: 11px;
+        }
+        
+        .edu h3 {
+            font-size: 11.5px;
+            font-weight: 800;
+            color: #111;
+            line-height: 1.3;
+        }
+        
+        .edu .col {
+            font-size: 11px;
+            font-weight: 700;
+            color: #17a36a;
+            margin-top: 2px;
+        }
+        
+        .edu .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-size: 9.8px;
+            color: #777;
+            margin-top: 3px;
+        }
+        
+        .edu .meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+        }
+        
+        .edu .meta svg {
+            width: 9px;
+            height: 9px;
+        }
+        
+        .bdg {
+            display: inline-block;
+            background: #e5f8ef;
+            color: #0c6e45;
+            font-size: 9px;
+            font-weight: 800;
+            padding: 2px 7px;
+            border-radius: 3px;
+            margin-top: 5px;
+            margin-right: 3px;
+        }
+        /* ── CERTIFICATIONS ── */
+        
+        .cert {
+            margin-bottom: 8px;
+        }
+        
+        .cert h4 {
+            font-size: 11px;
+            font-weight: 800;
+            color: #111;
+            line-height: 1.3;
+        }
+        
+        .cert p {
+            font-size: 10px;
+            color: #777;
+            margin-top: 1px;
+        }
+        /* ── PROJECTS ── */
+        
+        .proj {
+            margin-bottom: 12px;
+        }
+        
+        .proj h3 {
+            font-size: 11.5px;
+            font-weight: 800;
+            color: #111;
+            line-height: 1.3;
+        }
+        
+        .proj .stk {
+            font-size: 9.8px;
+            font-weight: 700;
+            color: #17a36a;
+            margin: 2px 0 3px 0;
+            letter-spacing: 0.1px;
+        }
+        
+        .proj ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .proj ul li {
+            font-size: 10.8px;
+            color: #222;
+            line-height: 1.66;
+            padding-left: 12px;
+            position: relative;
+            margin-bottom: 1px;
+        }
+        
+        .proj ul li::before {
+            content: "▸";
+            color: #17a36a;
+            position: absolute;
+            left: 0;
+            font-size: 8.5px;
+            top: 3px;
+        }
+        /* ── ACHIEVEMENTS ── */
+        
+        .ach {
+            display: flex;
+            gap: 9px;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        
+        .dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+        
+        .ach h4 {
+            font-size: 11px;
+            font-weight: 800;
+            color: #111;
+            line-height: 1.3;
+        }
+        
+        .ach p {
+            font-size: 10.5px;
+            color: #444;
+            margin-top: 2px;
+            line-height: 1.58;
+        }
+        /* ── SKILLS — grouped, no emojis ── */
+        
+        .skgroup {
+            margin-bottom: 9px;
+        }
+        
+        .skgroup h5 {
+            font-size: 9.5px;
+            font-weight: 800;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        
+        .stags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+        
+        .stag {
+            background: #f0f0f0;
+            border-radius: 3px;
+            padding: 3px 9px;
+            font-size: 10px;
+            font-weight: 700;
+            color: #222;
+        }
+        /* ── CODING PROFILES ── */
+        
+        .cprow {
+            font-size: 10.8px;
+            color: #222;
+            margin-bottom: 5px;
+        }
+        
+        .cprow strong {
+            color: #17a36a;
+            margin-right: 6px;
+        }
+        /* ── EXTRA / LEADERSHIP ── */
+        
+        .extra {
+            margin-bottom: 8px;
+        }
+        
+        .extra h4 {
+            font-size: 11px;
+            font-weight: 800;
+            color: #111;
+        }
+        
+        .extra p {
+            font-size: 10.5px;
+            color: #444;
+            margin-top: 2px;
+            line-height: 1.58;
+        }
+        /* print */
+        
+        @media print {
+            body {
+                background: #fff;
+            }
+            .page {
+                margin: 0;
+                width: 100%;
+                padding: 20px 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- ══ HEADER ══ -->
+        <div class="header">
+            <div class="hname">
+                <h1>Darshan Gowda T S</h1>
+                <div class="hrole">Software Engineer &amp; DevOps Developer</div>
+            </div>
+            <div class="avatar">DG</div>
+        </div>
+
+        <!-- ══ CONTACT — plain text icons only, no emojis ══ -->
+        <div class="cbar">
+            <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+      +91 9141560320
+    </span>
+            <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <a href="mailto:darshanpaapani@gmail.com">darshanpaapani@gmail.com</a>
+    </span>
+            <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      <a href="https://www.linkedin.com/in/darshangowdats/">linkedin.com/in/darshangowdats</a>
+    </span>
+            <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+      <a href="https://github.com/Darshan-paapani06">github.com/Darshan-paapani06</a>
+    </span>
+            <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Mandya, Karnataka, India
+    </span>
+        </div>
+
+        <!-- ══ PROFESSIONAL SUMMARY — full width, keyword-rich, grammar-perfect ══ -->
+        <div class="sh">Professional Summary</div>
+        <p class="summary">
+            Results-driven B.E. (Information Science and Engineering) fresher from Visvesvaraya Technological University (VTU) with a 9.2 CGPA, specializing in full-stack developer, machine learning (ML), artificial intelligence (AI), cloud computing, and DevOps
+            engineering. Proficient in designing and deploying production-grade applications using Python, React.js, Flask, Node.js, Amazon Web Services (AWS), and Docker. Demonstrated expertise in computer vision, natural language processing (NLP), Retrieval-Augmented
+            Generation (RAG), and large language model (LLM) integration — technologies at the forefront of the 2025–2027 AI and automation boom. Recognized as a 9-time hackathon winner, including AWS Hackathon 2nd Runner-Up (national level), and selected
+            among 114 students pan-India for an IIT Madras innovation workshop with startup funding clearance. Proficient in data structures and algorithms with 200+ LeetCode problems solved. Adept at agile software development, RESTful API design, CI/CD
+            pipeline implementation, and cross-functional collaboration in fast-paced environments.
+        </p>
+
+        <!-- ══ TWO-COLUMN GRID ══ -->
+        <div class="grid">
+
+            <!-- ════ LEFT COLUMN ════ -->
+            <div>
+
+                <!-- EDUCATION -->
+                <div class="sh">Education</div>
+
+                <div class="edu">
+                    <h3>B.E. — Information Science and Engineering</h3>
+                    <div class="col">Mysuru Royal Institute of Technology, VTU</div>
+                    <div class="meta">
+                        <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            08/2023 – 05/2027 (Expected)
+          </span>
+                        <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Mysuru, Karnataka
+          </span>
+                    </div>
+                    <span class="bdg">CGPA: 9.2 / 10</span>
+                    <span class="bdg">Best Student Award</span>
+                    <span class="bdg">Department Rank Holder</span>
+                </div>
+
+                <div class="edu">
+                    <h3>12th Grade — Science (Physics, Chemistry, Mathematics, Biology)</h3>
+                    <div class="col">Shree Geetha Excellence PU College, Mandya</div>
+                    <div class="meta">
+                        <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            06/2021 – 05/2022
+          </span>
+                        <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Mandya, Karnataka
+          </span>
+                    </div>
+                    <span class="bdg">91% — Karnataka State Board</span>
+                </div>
+
+                <div class="edu">
+                    <h3>10th Grade — Secondary School Certificate (SSC)</h3>
+                    <div class="col">Abhinava Bharathi Vidya Kendra, Mandya</div>
+                    <div class="meta">
+                        <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            06/2019 – 05/2020
+          </span>
+                        <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Mandya, Karnataka
+          </span>
+                    </div>
+                    <span class="bdg">94% — Karnataka State Board</span>
+                </div>
+
+                <!-- PROJECTS -->
+                <div class="sh">Projects</div>
+
+                <div class="proj">
+                    <h3>BharatSign — Handwritten Signature Verification System</h3>
+                    <div class="stk">Python | OpenCV | Flask | scikit-learn | SIFT | REST API | Machine Learning</div>
+                    <ul>
+                        <li>Engineered a multi-script (English, Hindi, Bengali) signature verification system using Scale-Invariant Feature Transform (SIFT) and 12 geometric contour features, achieving high-accuracy forgery detection on CEDAR and BHSig260
+                            benchmark datasets with a LinearSVC classifier.</li>
+                        <li>Developed and deployed a production-ready banking terminal UI via Flask REST API, incorporating a 10-cell forensic risk matrix (NEGLIGIBLE to CRITICAL) and automated label verification — a first-of-its-kind solution targeting Indian
+                            banking infrastructure.</li>
+                    </ul>
+                </div>
+
+                <div class="proj">
+                    <h3>SADAK AI — AI-Powered Pothole Detection and Civic Reporting Platform</h3>
+                    <div class="stk">Python | TensorFlow | OpenCV | CNN | Flask | GPS API | Deep Learning | Object Detection</div>
+                    <ul>
+                        <li>Developed a government-grade computer vision solution using a Convolutional Neural Network (CNN) trained on 20,000+ road images, achieving 93% object detection accuracy for pothole classification and road defect analysis.</li>
+                        <li>Integrated automatic GPS geolocation capture and OpenStreetMap tagging, enabling citizens to submit real-time complaints via a mobile-responsive web interface, automatically routing reports to the relevant municipal authority.</li>
+                    </ul>
+                </div>
+
+                <div class="proj">
+                    <h3>AI Parliament — Multi-Agent Large Language Model (LLM) Debate Engine</h3>
+                    <div class="stk">React 18 | Anthropic Claude API | LLM | Vite | Server-Sent Events (SSE) | Generative AI</div>
+                    <ul>
+                        <li>Architected a 5-agent Generative AI reasoning system (Reasoner, Scholar, Validator, Devil's Advocate, Synthesizer) leveraging large language models (LLMs) via the Anthropic Claude API, with adversarial structured debate and a 0–100%
+                            confidence scoring verdict mechanism.</li>
+                        <li>Implemented real-time token-by-token streaming via Server-Sent Events (SSE), delivering low-latency responses with a React 18 frontend and Vite build toolchain, resulting in a seamless multi-agent deliberation experience.</li>
+                    </ul>
+                </div>
+
+                <div class="proj">
+                    <h3>VibeCloud — Cloud Integrated Project</h3>
+                    <div class="stk">React | Firebase | Spotify Web API | Firestore | Progressive Web App (PWA) | OAuth 2.0</div>
+                    <ul>
+                        <li>Built a full-stack Progressive Web Application (PWA) supporting 8 mood categories across 3 regional languages (English, Hindi, Kannada) with Spotify Web API integration, in-app audio preview, and offline-first caching via Service
+                            Workers.</li>
+                        <li>Implemented Google OAuth 2.0 authentication, Firestore NoSQL real-time database, mood analytics dashboard, and a responsive glassmorphism UI — demonstrating end-to-end full-stack development proficiency.</li>
+                    </ul>
+                </div>
+
+                <div class="proj">
+                    <h3>Jnana— RAG-Powered Multilingual Citizen Services Platform</h3>
+                    <div class="stk">React 18 | Supabase | PostgreSQL | Claude API | RAG | PWA | Web Speech API | NLP</div>
+                    <ul>
+                        <li>Designed an offline-first Progressive Web App (PWA) delivering Retrieval-Augmented Generation (RAG)-powered AI assistance across Agriculture and Healthcare domains, supporting 2 languages with voice input via the Web Speech API.</li>
+                        <li>Implemented a custom security layer including rate limiting, input sanitisation, and XSS prevention; integrated Canvas API geospatial map and multi-stage onboarding — architected as a scalable model for SAARC-region civic technology
+                            deployment.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- ════ RIGHT COLUMN ════ -->
+            <div>
+
+                <!-- KEY ACHIEVEMENTS -->
+                <div class="sh">Key Achievements</div>
+
+                <div class="ach">
+                    <div class="dot" style="background:#f5a623;"></div>
+                    <div>
+                        <h4>AWS Hackathon — 2nd Runner-Up, India (National Level)</h4>
+                        <p>Ranked among the top 3 teams nationally in the Amazon Web Services (AWS) hackathon, competing against 1,000+ participants from leading engineering institutions across India.</p>
+                    </div>
+                </div>
+
+                <div class="ach">
+                    <div class="dot" style="background:#4caf50;"></div>
+                    <div>
+                        <h4>IIT Madras National Innovation Workshop — Selected and Awarded</h4>
+                        <p>Selected among 114 students pan-India for the IIT Madras innovation program; received a prize and official startup funding clearance for an AI-based technology solution.</p>
+                    </div>
+                </div>
+
+                <div class="ach">
+                    <div class="dot" style="background:#e91e63;"></div>
+                    <div>
+                        <h4>e-Yantra Robotics Competition — International Finalist</h4>
+                        <p>Qualified as an international finalist in IIT Bombay's e-Yantra global robotics competition, competing against university teams worldwide in autonomous systems and robot operating system (ROS) development.</p>
+                    </div>
+                </div>
+
+                <div class="ach">
+                    <div class="dot" style="background:#2196f3;"></div>
+                    <div>
+                        <h4>18+ Hackathons — 9 First-Place Wins and 5 Runner-Up Positions</h4>
+                        <p>Achieved 9 first-place wins and 5 runner-up positions across state-level, national, and international software development and AI hackathons, demonstrating consistent technical excellence.</p>
+                    </div>
+                </div>
+
+                <div class="ach">
+                    <div class="dot" style="background:#9c27b0;"></div>
+                    <div>
+                        <h4>CODEIS Technical Club — Co-Founder and Lead Organizer</h4>
+                        <p>Co-founded and led a college technical club; organized AI/ML workshops, coding competitions, and industry-connect sessions for 100+ students, fostering a culture of applied engineering innovation.</p>
+                    </div>
+                </div>
+
+                <!-- TECHNICAL SKILLS — grouped by category for ATS parsing -->
+                <div class="sh">Technical Skills</div>
+
+                <div class="skgroup">
+                    <h5>Programming Languages</h5>
+                    <div class="stags">
+                        <span class="stag">Python</span>
+                        <span class="stag">JavaScript (ES6+)</span>
+                        <span class="stag">TypeScript</span>
+                        <span class="stag">C++</span>
+                        <span class="stag">C</span>
+                        <span class="stag">SQL</span>
+                    </div>
+                </div>
+
+                <div class="skgroup">
+                    <h5>AI / Machine Learning / Data Science</h5>
+                    <div class="stags">
+                        <span class="stag">Machine Learning (ML)</span>
+                        <span class="stag">Deep Learning</span>
+                        <span class="stag">Generative AI</span>
+                        <span class="stag">Large Language Models (LLMs)</span>
+                        <span class="stag">RAG</span>
+                        <span class="stag">NLP</span>
+                        <span class="stag">Computer Vision</span>
+                        <span class="stag">TensorFlow</span>
+                        <span class="stag">scikit-learn</span>
+                        <span class="stag">OpenCV</span>
+                        <span class="stag">Pandas</span>
+                        <span class="stag">NumPy</span>
+                        <span class="stag">MLOps</span>
+                    </div>
+                </div>
+
+                <div class="skgroup">
+                    <h5>Web Development (Frontend and Backend)</h5>
+                    <div class="stags">
+                        <span class="stag">React.js</span>
+                        <span class="stag">Node.js</span>
+                        <span class="stag">Flask</span>
+                        <span class="stag">REST API</span>
+                        <span class="stag">HTML5</span>
+                        <span class="stag">CSS3</span>
+                        <span class="stag">Tailwind CSS</span>
+                        <span class="stag">Vite</span>
+                        <span class="stag">Progressive Web App (PWA)</span>
+                    </div>
+                </div>
+
+                <div class="skgroup">
+                    <h5>Cloud, DevOps and Infrastructure</h5>
+                    <div class="stags">
+                        <span class="stag">AWS (EC2, S3, Lambda)</span>
+                        <span class="stag">Docker</span>
+                        <span class="stag">Kubernetes</span>
+                        <span class="stag">CI/CD Pipelines</span>
+                        <span class="stag">GitHub Actions</span>
+                        <span class="stag">Git</span>
+                        <span class="stag">Linux</span>
+                    </div>
+                </div>
+
+                <div class="skgroup">
+                    <h5>Databases</h5>
+                    <div class="stags">
+                        <span class="stag">MySQL</span>
+                        <span class="stag">MongoDB</span>
+                        <span class="stag">PostgreSQL</span>
+                        <span class="stag">Firebase Firestore</span>
+                        <span class="stag">Supabase</span>
+                    </div>
+                </div>
+
+                <div class="skgroup">
+                    <h5>Robotics and Cybersecurity</h5>
+                    <div class="stags">
+                        <span class="stag">ROS2</span>
+                        <span class="stag">Gazebo Simulator</span>
+                        <span class="stag">Ethical Hacking</span>
+                        <span class="stag">Penetration Testing</span>
+                        <span class="stag">Kali Linux</span>
+                        <span class="stag">Network Security</span>
+                    </div>
+                </div>
+
+                <div class="skgroup">
+                    <h5>Methodologies and Tools</h5>
+                    <div class="stags">
+                        <span class="stag">Agile (Scrum)</span>
+                        <span class="stag">System Design</span>
+                        <span class="stag">Microservices</span>
+                        <span class="stag">Data Structures and Algorithms</span>
+                        <span class="stag">Object-Oriented Programming (OOP)</span>
+                        <span class="stag">Figma</span>
+                        <span class="stag">Postman</span>
+                        <span class="stag">VS Code</span>
+                    </div>
+                </div>
+
+                <!-- CODING PROFILES -->
+                <div class="sh">Coding Profiles</div>
+                <div class="cprow"><strong>LeetCode</strong> 200+ problems solved — Data Structures and Algorithms</div>
+                <div class="cprow"><strong>GitHub</strong> Active open-source contributor — github.com/Darshan-paapani06</div>
+
+                <!-- CERTIFICATIONS -->
+                <div class="sh">Certifications</div>
+                <div class="cert">
+                    <h4>ROS2 for Robotics — Complete Course</h4>
+                    <p>Udemy · 2025</p>
+                </div>
+                <div class="cert">
+                    <h4>Natural Language Processing (NLP) with Python</h4>
+                    <p>Udemy · 2025</p>
+                </div>
+                <div class="cert">
+                    <h4>Computer Vision and Deep Learning</h4>
+                    <p>Udemy · 2025</p>
+                </div>
+                <div class="cert">
+                    <h4>Ethical Hacking and Penetration Testing</h4>
+                    <p>Udemy · 2026</p>
+                </div>
+                <div class="cert">
+                    <h4>Cybersecurity Fundamentals</h4>
+                    <p>Udemy · 2026</p>
+                </div>
+
+                <!-- LEADERSHIP -->
+                <div class="sh">Leadership and Extracurricular Activities</div>
+                <div class="extra">
+                    <h4>Co-Founder and Lead Organizer — CODEIS Technical Club</h4>
+                    <p>Founded and led a college-level technical club; organized AI and machine learning workshops, competitive coding events, and industry-connect sessions for 100+ students, improving technical awareness and participation in national competitions.</p>
+                </div>
+                <div class="extra">
+                    <h4>Startup Funding Recipient — IIT Madras Innovation Program</h4>
+                    <p>Received official startup funding clearance and intellectual property (IP) commercialization permission following recognition at the IIT Madras national innovation workshop, validating the technical and commercial viability of an AI-based
+                        product concept.</p>
+                </div>
+
+            </div>
+        </div>
+        <!-- end grid -->
+
+    </div>
+    <!-- end page -->
+</body>
+
+</html>
