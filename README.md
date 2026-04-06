@@ -1,100 +1,79 @@
-#  Codveda ML Internship — Level 1 (Basic)
+# Codveda ML Internship — Complete Journey
 
 <div align="center">
 
 ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Python-blue?style=for-the-badge&logo=python)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-1.0+-orange?style=for-the-badge&logo=scikit-learn)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange?style=for-the-badge&logo=tensorflow)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-1.x-orange?style=for-the-badge&logo=scikit-learn)
 ![pandas](https://img.shields.io/badge/pandas-Data%20Analysis-green?style=for-the-badge&logo=pandas)
-![Status](https://img.shields.io/badge/Level%201-Completed-success?style=for-the-badge)
+![Status](https://img.shields.io/badge/Internship-Completed-success?style=for-the-badge)
 
-**Internship at [Codveda Technologies](https://www.codveda.com)**
+<br/>
+
 **Intern : Darshan Gowda T S**
+**Company : [Codveda Technologies](https://www.codveda.com)**
 **Duration : 20 March 2026 – 20 April 2026**
+**Mode : Remote**
+
+<br/>
+
+> *"From raw data to neural networks — built everything from scratch."*
 
 </div>
 
 ---
 
-## About This Repository
+## What This Repository Contains
 
-This repository contains all the work completed during my Machine Learning Internship at Codveda Technologies. Each level covers a set of ML tasks with increasing complexity — from basic preprocessing all the way to neural networks.
-
-This README covers **Level 1 — Basic**, which focuses on the foundational building blocks of any machine learning pipeline.
+This repository is the complete record of my Machine Learning Internship at Codveda Technologies. Over the course of one month, I worked through 9 hands-on ML tasks across 3 levels — starting from data cleaning and ending with a fully trained neural network. Every script here was written, understood and executed by me.
 
 ---
 
-## Level 1 — Task Overview
+## Internship Progress
 
-| Task | Topic | Dataset | Key Result |
-|------|-------|---------|-----------|
-| Task 1 | Data Preprocessing | Iris + Churn | Both datasets cleaned and saved |
-| Task 2 | Linear Regression | Boston Housing | R² = 0.67, RMSE = $4.93K |
-| Task 3 | KNN Classifier | Iris | Accuracy = 96.7% |
+| Level | Theme | Tasks | Status |
+|-------|-------|-------|--------|
+| Level 1 | Basic | Data Preprocessing · Linear Regression · KNN | ✅ Complete |
+| Level 2 | Intermediate | Logistic Regression · Decision Trees · K-Means | ✅ Complete |
+| Level 3 | Advanced | Random Forest · SVM · Neural Networks | ✅ Complete |
 
 ---
 
-## Task 1 — Data Preprocessing for Machine Learning
+## Level 1 — Basic
 
-### What was done
-Before any model can be trained, raw data needs to be cleaned and prepared. This task covers the complete preprocessing pipeline applied to two real-world datasets.
+> **Theme : Building the foundation**
+> Before you can build any model, you need to understand your data and prepare it properly. Level 1 covers exactly that.
 
-**Datasets used:**
-- `1__iris.csv` — 150 samples, 4 features, 3 flower species
-- `churn-bigml-80.csv` — 2666 customers, 20 features, binary churn label
+---
 
-### Techniques Applied
+### Task 1 — Data Preprocessing
 
-**Missing Value Handling**
-- Mean Imputation — fills missing values with the column average
-- Drop Strategy — removes rows that contain missing values
+**Datasets :** `1__iris.csv` (150 rows) + `churn-bigml-80.csv` (2666 rows)
 
-**Categorical Encoding**
-- Label Encoding — converts categories to integers (0, 1, 2)
-- One-Hot Encoding — creates a separate binary column per category
-- Manual Mapping — Yes/No columns mapped to 1/0
+The most underrated step in ML. This task covered the complete preprocessing pipeline that every real project starts with.
 
-**Feature Scaling**
-- StandardScaler — transforms features to mean=0, std=1
-- MinMaxScaler — scales all values to the range [0, 1]
+| Technique | What it does |
+|-----------|-------------|
+| Mean Imputation | Fills missing values with the column average |
+| Drop Strategy | Removes rows that contain NaN values |
+| Label Encoding | Converts category names to integers |
+| One-Hot Encoding | Creates a binary column per category |
+| StandardScaler | Transforms features to mean=0, std=1 |
+| MinMaxScaler | Scales all values to range [0, 1] |
+| Train/Test Split | 80% training / 20% testing with stratification |
 
-**Train / Test Split**
-- 80% training / 20% testing
-- `stratify=y` used to maintain class balance in both sets
+**Output files :** `iris_preprocessed.csv` · `churn_preprocessed.csv`
 
-### Output Files
-```
-outputs/
-├── iris_preprocessed.csv
-└── churn_preprocessed.csv
-```
-
-### How to Run
 ```bash
-python scripts/L1_T1_Data_Preprocessing.py
+python Level_1_Basic/L1_T1_Data_Preprocessing.py
 ```
 
 ---
 
-## Task 2 — Linear Regression for House Price Prediction
+### Task 2 — Linear Regression
 
-### What was done
-Built a Linear Regression model to predict median house prices using the Boston Housing dataset. The model was trained, evaluated and interpreted fully.
-
-**Dataset used:**
-- `4__house_Prediction_Data_Set.csv` — 506 houses, 13 features
-
-### Feature Description
-
-| Feature | Description |
-|---------|-------------|
-| CRIM | Per capita crime rate |
-| RM | Average number of rooms |
-| LSTAT | % lower income population |
-| PTRATIO | Pupil-teacher ratio |
-| NOX | Nitric oxide concentration |
-| MEDV | Median house value in $1000s ← Target |
-
-### Model Performance
+**Dataset :** `4__house_Prediction_Data_Set.csv` — 506 houses, 13 features
+**Goal :** Predict median house prices in $1000s
 
 | Metric | Value |
 |--------|-------|
@@ -103,102 +82,255 @@ Built a Linear Regression model to predict median house prices using the Boston 
 | RMSE | $4.93K |
 | MAE | $3.19K |
 
-### Key Findings from Coefficients
+**Key findings from model coefficients :**
 
-| Feature | Coefficient | Effect |
-|---------|------------|--------|
-| RM | +3.15 | More rooms → higher price |
-| LSTAT | -3.61 | More poverty → lower price |
-| PTRATIO | -2.04 | Worse schools → lower price |
-| DIS | -3.08 | Far from employment → lower price |
+| Feature | Effect |
+|---------|--------|
+| RM (rooms) | +$3.15K per extra room |
+| LSTAT (poverty %) | -$3.61K per unit increase |
+| PTRATIO (school ratio) | -$2.04K per unit increase |
+| DIS (distance) | -$3.08K per unit increase |
 
-### Output Files
-```
-outputs/
-├── L1_T2_actual_vs_predicted.png
-├── L1_T2_feature_coefficients.png
-├── L1_T2_error_distribution.png
-└── L1_T2_predictions.csv
-```
+**Plots generated :** Actual vs Predicted · Feature Coefficients · Error Distribution
 
-### Plots Generated
-
-**Actual vs Predicted**
-Shows how close the model predictions are to real house prices. The closer the dots are to the red diagonal line, the better the prediction.
-
-**Feature Coefficients**
-Horizontal bar chart showing which features increase (blue) or decrease (red) the house price and by how much.
-
-**Error Distribution**
-Histogram of prediction errors — ideally centered around zero, confirming the model is unbiased.
-
-### How to Run
 ```bash
-python scripts/L1_T2_Linear_Regression.py
+python Level_1_Basic/L1_T2_Linear_Regression.py
 ```
 
 ---
 
-## Task 3 — K-Nearest Neighbors (KNN) Classifier
+### Task 3 — KNN Classifier
 
-### What was done
-Built a KNN classifier to classify iris flowers into 3 species. Tested 8 different values of K and selected the best one based on accuracy.
+**Dataset :** `1__iris.csv` — 3 flower species
+**Goal :** Classify iris flowers into Setosa, Versicolor or Virginica
 
-**Dataset used:**
-- `1__iris.csv` — 150 samples, 4 features, 3 species (Setosa, Versicolor, Virginica)
-
-### K Value Comparison
+Tested K values from 1 to 15 and compared all results.
 
 | K | Accuracy | F1 Score |
 |---|----------|----------|
-| K=1 | 0.9667 | 0.9666 |
+| K=1 | **0.9667** | **0.9666** |
 | K=3 | 0.9333 | 0.9327 |
 | K=5 | 0.9333 | 0.9327 |
 | K=7 | 0.9667 | 0.9666 |
-| K=9 | 0.9667 | 0.9666 |
-| K=11 | 0.9667 | 0.9666 |
-| K=13 | 0.9667 | 0.9666 |
-| **K=15** | **0.9667** | **0.9666** |
 
-**Best K = 1 with Accuracy = 96.67%**
+**Best K = 1 · Accuracy = 96.67% · Only 1 flower misclassified out of 30**
 
-### Final Model Performance (K=1)
+**Plots generated :** K vs Accuracy · Decision Boundary · Confusion Matrix
+
+```bash
+python Level_1_Basic/L1_T3_KNN_Classifier.py
+```
+
+---
+
+## Level 2 — Intermediate
+
+> **Theme : Real classification and clustering**
+> Moving from simple models to ones that handle imbalanced data, visualize decisions and discover hidden patterns.
+
+---
+
+### Task 1 — Logistic Regression for Binary Classification
+
+**Dataset :** `churn-bigml-80.csv` — 2666 customers
+**Goal :** Predict whether a customer will churn (binary outcome)
 
 | Metric | Value |
 |--------|-------|
-| Accuracy | 96.67% |
-| Precision | 0.9697 |
-| Recall | 0.9667 |
-| F1 Score | 0.9666 |
+| Accuracy | 83.9% |
+| Precision | 0.4000 |
+| Recall | 0.2051 |
+| F1 Score | 0.2712 |
+| AUC-ROC | 0.7561 |
 
-### Confusion Matrix
+**Key finding :** Customers with high customer service calls have an odds ratio of 2.10 — meaning they are twice as likely to churn. International plan users are 1.99x more likely to leave.
 
-| | Predicted Setosa | Predicted Versicolor | Predicted Virginica |
-|--|--|--|--|
-| **Actual Setosa** | 10 | 0 | 0 |
-| **Actual Versicolor** | 0 | 10 | 0 |
-| **Actual Virginica** | 0 | 1 | 9 |
+**Plots generated :** ROC Curve · Confusion Matrix · Feature Odds Ratios
 
-Only 1 flower was misclassified out of 30 test samples.
-
-### Key Insights
-- Feature scaling is critical for KNN since it uses Euclidean distance
-- Small K can overfit, large K can underfit — always compare
-- Iris dataset is nearly linearly separable which explains the high accuracy
-
-### Output Files
-```
-outputs/
-├── L1_T3_knn_performance.png
-├── L1_T3_decision_boundary.png
-├── L1_T3_k_comparison.png
-└── L1_T3_k_comparison.csv
-```
-
-### How to Run
 ```bash
-python scripts/L1_T3_KNN_Classifier.py
+python Level_2_Intermediate/L2_T1_Logistic_Regression.py
 ```
+
+---
+
+### Task 2 — Decision Trees for Classification
+
+**Dataset :** `1__iris.csv`
+**Goal :** Classify flowers and visualize the exact decision rules
+
+The biggest advantage of decision trees — you can read what the model actually learned:
+
+```
+Is petal_length <= 2.45?
+    Yes → Setosa (always correct)
+    No  → Is petal_width <= 1.65?
+              Yes → Versicolor
+              No  → Virginica
+```
+
+Demonstrated overfitting clearly — unpruned tree hit 100% train accuracy but only 93.3% on test. Pruning at depth 3 improved test accuracy to **96.7%**.
+
+| Depth | Train Acc | Test Acc |
+|-------|-----------|----------|
+| 1 | 0.6667 | 0.6667 |
+| 2 | 0.9667 | 0.9333 |
+| **3** | **0.9833** | **0.9667** |
+| 5 (full) | 1.0000 | 0.9333 |
+
+**Plots generated :** Tree Structure · Overfitting Graph · Confusion Matrix · Feature Importance
+
+```bash
+python Level_2_Intermediate/L2_T2_Decision_Tree.py
+```
+
+---
+
+### Task 3 — K-Means Clustering
+
+**Dataset :** `2__Stock_Prices_Data_Set.csv` — 497,472 rows of S&P 500 data (2014–2017)
+**Goal :** Group 505 stocks into clusters based on price behaviour
+
+Engineered 7 features per stock: average close price, average volume, price range, volatility and total return percentage. Used the elbow method and silhouette score to find the optimal number of clusters.
+
+**Best K = 2 · Silhouette Score = 0.8496**
+
+| Cluster | Stocks | Avg Price | Volatility | Return |
+|---------|--------|-----------|------------|--------|
+| 0 | 497 regular stocks | $76 | 13.7 | 52.3% |
+| 1 | 8 premium stocks (AMZN, GOOG, PCLN...) | $677 | 157.6 | 77.6% |
+
+The algorithm separated high-value tech giants from regular stocks entirely on its own — no labels, no guidance.
+
+**Plots generated :** Elbow Curve · Silhouette Scores · 2D Scatter · Price vs Volatility
+
+```bash
+python Level_2_Intermediate/L2_T3_KMeans_Clustering.py
+```
+
+---
+
+## Level 3 — Advanced
+
+> **Theme : Ensemble methods, margins and deep learning**
+> The most challenging level — hyperparameter tuning, kernel tricks and building a neural network from scratch.
+
+---
+
+### Task 1 — Random Forest Classifier
+
+**Dataset :** `churn-bigml-80.csv`
+**Goal :** Build a more powerful churn predictor using ensemble learning
+
+Random Forest builds hundreds of decision trees and combines them — much more stable and accurate than a single tree.
+
+| Metric | Value |
+|--------|-------|
+| CV Mean Accuracy | 0.9542 ± 0.0093 |
+| Test Accuracy | 95.5% |
+| Precision | 96.5% |
+| Recall | 71.8% |
+| F1 Score | 0.8235 |
+
+**Best hyperparameters found via GridSearchCV :**
+- `n_estimators` : 100
+- `max_depth` : 15
+- `min_samples_split` : 5
+
+**Top features by importance :**
+
+| Feature | Importance |
+|---------|-----------|
+| Total Day Charge | 0.1410 |
+| Total Day Minutes | 0.1385 |
+| Customer Service Calls | 0.1315 |
+| International Plan | 0.0964 |
+
+**Plots generated :** Feature Importance · Confusion Matrix · Trees vs Accuracy
+
+```bash
+python Level_3_Advanced/L3_T1_Random_Forest.py
+```
+
+---
+
+### Task 2 — Support Vector Machine (SVM)
+
+**Dataset :** `1__iris.csv`
+**Goal :** Classify species using maximum margin boundaries, compare kernels
+
+SVM finds the hyperplane that separates classes with the widest possible margin.
+
+| Kernel | Accuracy | F1 Score | AUC |
+|--------|----------|----------|-----|
+| **Linear** | **1.0000** | **1.0000** | **1.0000** |
+| RBF | 0.9667 | 0.9666 | 0.9967 |
+| Polynomial | 0.9000 | 0.8977 | 0.9933 |
+| Sigmoid | 0.9000 | 0.8977 | 0.9900 |
+
+**Linear kernel achieved perfect 100% accuracy** — confirming that Iris classes are linearly separable. A straight boundary is all that is needed.
+
+**Cross Validation Mean : 0.9667 ± 0.0298**
+
+**Plots generated :** Linear Decision Boundary · RBF Decision Boundary · Kernel Comparison · Confusion Matrix
+
+```bash
+python Level_3_Advanced/L3_T2_SVM.py
+```
+
+---
+
+### Task 3 — Neural Network with TensorFlow / Keras
+
+**Dataset :** Sklearn Digits — 1797 handwritten digit images (8x8 pixels, 10 classes)
+**Goal :** Build a feed-forward neural network to classify digits 0–9
+
+**Network Architecture :**
+
+```
+Input Layer    →  64 neurons  (one per pixel)
+Hidden Layer 1 →  128 neurons  (ReLU activation)
+Dropout        →  30% (prevents overfitting)
+Hidden Layer 2 →  64 neurons  (ReLU activation)
+Dropout        →  20%
+Hidden Layer 3 →  32 neurons  (ReLU activation)
+Output Layer   →  10 neurons  (Softmax — one per digit)
+
+Total Parameters : 18,986
+Optimizer        : Adam (lr=0.001)
+Loss Function    : Categorical Crossentropy
+```
+
+| Metric | Value |
+|--------|-------|
+| Training Accuracy | 98.69% |
+| Validation Accuracy | 96.53% |
+| Test Accuracy | **97.50%** |
+| Test Loss | 0.1138 |
+| Epochs Trained | 29 (early stopping) |
+
+The model used early stopping — it automatically stopped training when validation loss stopped improving, preventing overfitting.
+
+**Plots generated :** Training/Validation Accuracy · Training/Validation Loss · Confusion Matrix · Sample Predictions with digit images
+
+```bash
+python Level_3_Advanced/L3_T3_Neural_Network.py
+```
+
+---
+
+## Results at a Glance
+
+| Task | Model | Dataset | Key Result |
+|------|-------|---------|-----------|
+| L1-T1 | Data Preprocessing | Iris + Churn | Pipeline complete |
+| L1-T2 | Linear Regression | Boston Housing | R² = 0.67 |
+| L1-T3 | KNN Classifier | Iris | 96.7% accuracy |
+| L2-T1 | Logistic Regression | Churn | AUC = 0.756 |
+| L2-T2 | Decision Trees | Iris | 96.7% pruned |
+| L2-T3 | K-Means Clustering | S&P 500 Stocks | Silhouette = 0.85 |
+| L3-T1 | Random Forest | Churn | 95.5% accuracy |
+| L3-T2 | SVM | Iris | 100% linear kernel |
+| L3-T3 | Neural Network | Digits | 97.5% accuracy |
 
 ---
 
@@ -209,26 +341,43 @@ Codveda-ML-Internship/
 │
 ├── README.md
 │
+├── datasets/
+│   ├── 1__iris.csv
+│   ├── 2__Stock_Prices_Data_Set.csv
+│   ├── 3__Sentiment_dataset.csv
+│   ├── 4__house_Prediction_Data_Set.csv
+│   ├── churn-bigml-80.csv
+│   └── churn-bigml-20.csv
+│
 ├── Level_1_Basic/
-│   ├── scripts/
-│   │   ├── L1_T1_Data_Preprocessing.py
-│   │   ├── L1_T2_Linear_Regression.py
-│   │   └── L1_T3_KNN_Classifier.py
-│   └── outputs/
-│       ├── iris_preprocessed.csv
-│       ├── churn_preprocessed.csv
-│       ├── L1_T2_actual_vs_predicted.png
-│       ├── L1_T2_feature_coefficients.png
-│       ├── L1_T2_error_distribution.png
-│       ├── L1_T3_knn_performance.png
-│       ├── L1_T3_decision_boundary.png
-│       └── L1_T3_k_comparison.png
+│   ├── L1_T1_Data_Preprocessing.py
+│   ├── L1_T2_Linear_Regression.py
+│   └── L1_T3_KNN_Classifier.py
 │
-├── Level_2_Intermediate/        ← In progress
-│   └── coming soon...
+├── Level_2_Intermediate/
+│   ├── L2_T1_Logistic_Regression.py
+│   ├── L2_T2_Decision_Tree.py
+│   └── L2_T3_KMeans_Clustering.py
 │
-└── Level_3_Advanced/            ← Upcoming
-    └── coming soon...
+├── Level_3_Advanced/
+│   ├── L3_T1_Random_Forest.py
+│   ├── L3_T2_SVM.py
+│   └── L3_T3_Neural_Network.py
+│
+└── outputs/
+    ├── iris_preprocessed.csv
+    ├── churn_preprocessed.csv
+    ├── L1_T2_actual_vs_predicted.png
+    ├── L1_T2_feature_coefficients.png
+    ├── L1_T3_knn_performance.png
+    ├── L1_T3_decision_boundary.png
+    ├── L2_T1_logistic_regression_results.png
+    ├── L2_T2_decision_tree_results.png
+    ├── L2_T2_feature_importance.png
+    ├── L2_T3_kmeans_results.png
+    ├── L3_T1_random_forest_results.png
+    ├── L3_T2_svm_results.png
+    └── L3_T3_neural_network_results.png
 ```
 
 ---
@@ -236,11 +385,14 @@ Codveda-ML-Internship/
 ## Tools and Libraries
 
 ```python
-Python        3.12
-pandas        2.x
-numpy         1.x
-scikit-learn  1.x
-matplotlib    3.x
+Python          3.12
+pandas          2.x
+numpy           1.x
+scikit-learn    1.x
+matplotlib      3.x
+seaborn         0.x
+tensorflow      2.21
+keras           (via tensorflow)
 ```
 
 ---
@@ -249,16 +401,16 @@ matplotlib    3.x
 
 ```bash
 # Clone the repository
-git clone https://github.com/YourUsername/Codveda-ML-Internship.git
+git clone https://github.com/Darshan-paapani06/Codveda_ML_Internship.git
 
-# Navigate to project
-cd Codveda-ML-Internship
+# Navigate into project
+cd Codveda_ML_Internship
 
-# Install dependencies
+# Install all dependencies
 pip install pandas numpy scikit-learn matplotlib seaborn tensorflow
 
-# Run any script
-python Level_1_Basic/scripts/L1_T1_Data_Preprocessing.py
+# Run any script — example
+python Level_1_Basic/L1_T1_Data_Preprocessing.py
 ```
 
 ---
@@ -271,12 +423,14 @@ python Level_1_Basic/scripts/L1_T1_Data_Preprocessing.py
 | Position | Machine Learning Intern |
 | Mode | Remote |
 | Duration | 20 March 2026 – 20 April 2026 |
-| LinkedIn | [Darshan Gowda T S](#) |
+| GitHub | [Darshan-paapani06](https://github.com/Darshan-paapani06) |
 
 ---
 
 <div align="center">
 
-Made with genuine effort during my ML Internship at Codveda Technologies
+Built with genuine effort across 9 tasks, 3 levels and 1 month
+
+**#CodvedaInternship #MachineLearning #Python #maamuu**
 
 </div>
